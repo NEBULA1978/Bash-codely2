@@ -1,0 +1,70 @@
+Reloj :🕷 Gestiona tus logs: Redirecciona el output
+
+if true; then
+    echo "Dentro del If"
+fi
+Resultado:
+Dentro del If
+
+///////////////////////////
+
+if false; then
+    echo "Dentro del If"
+fi
+Resultado:
+
+//////////////////////////
+
+Si existe el fichero , ejecutas y muestras: Dentro del If:
+
+if [ -a Apuntes.txt ]; then echo "Dentro del If"; fi
+Dentro del If
+
+/////////////////////////
+
+Si existe el fichero , ejecutas y muestras: Dentro del If:
+if [ -a Apuntes ]; then     echo "Dentro del If"; fi
+
+NO EXISTE NO EJECUTA:Dentro del If
+
+///////////////////////////////
+
+Si existe condición con expresiones numéricas , ejecutas y muestras: Dentro del If:
+if ((3 > 2)); then     echo "Dentro del If"; fi
+Resultado:
+Dentro del If
+
+Si no se cumple la condición no muestra nada:
+if ((2 > 3)); then     echo "Dentro del If"; fi
+
+
+/////////////////////////////////////
+Si es par o impar el tiempo nos dice todo bien o todo mal:
+
+if (( $(date +%s) % 2 )); then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+Resultado:
+TODO BIEN
+exit
+
+if (( $(date +%s) % 2 )); then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+Resultado:
+TODO MAL
+exit
+
+///////////////////////////////////
+Ejecutamos script con If y else:
+
+if ./time_is_odd; then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+
+Enviamos el script y creamos un archivo(no veo nada?¿)
+if ./time_is_odd > outputtemporal; then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+
+Para enviar el output al dev/null:
+if ./time_is_odd.sh > /dev/null; then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+Resultado:
+TODO MAL
+exit
+
+El input 2 me lo rediriges al input 1 y todo al dev/null:
+if ./time_is_odd_with_error.sh > /dev/null 2>&1; then echo "TODO BIEN"; exit 0; else echo "TODO MAL"; exit 1; fi
+

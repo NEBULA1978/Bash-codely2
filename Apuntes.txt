@@ -1,0 +1,32 @@
+Watch:🐛 Operadores de bash
+
+Adjunto mis apuntes con ejemplos de los comandos utilizados:
+Resumen comandos:
+
+; -> Ejecuta un comando y, luego, otro con independencia de que la primera instrucción haya funcionado o no.
+
+  echo hola; echo hola
+&& -> Como el punto y coma, pero con la diferencia de que si el primer comando ha devuelto un error, no se ejecutará el segundo.
+
+  echo hola && echo adios
+
+
+  false && echo adios
+|| -> Si el primer comando da error, ejecuta el segundo. En caso de funcionar, sólamente ejecuta el primero.
+
+  echo hola || echo adios
+
+
+  false || echo adios
+| -> Pasa el output del primer comando al segundo y, así, sucesivamente. En el siguiente ejemplo, se devuelven las palabras que contienen la s.
+
+  cat hola | grep s
+El el siguiente ejemplo se hace un ls de cada carpeta. El comando xargs, permite poner argumentos en la posición que queramos y ejecutarlo de forma iterativa sobre el input. Por defecto, lo pone al final de comando. Se ejecuta para el directorio _
+
+  ls | xargs -I_ ls _
+> -> El output de un sitio lo guarda en otro.
+
+  cat hola | grep s > filtered.txt
+Otra opción de cargar ficheros que se considera más "UNIX friendly".
+
+  grep < hola

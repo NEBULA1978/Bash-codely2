@@ -1,0 +1,36 @@
+Reloj :🐌 Búcles en bash
+
+for x in $(seq 1 10); do echo "Hola soy el n $x"; done;
+Hola soy el n 1
+Hola soy el n 2
+Hola soy el n 3
+Hola soy el n 4
+Hola soy el n 5
+Hola soy el n 6
+Hola soy el n 7
+Hola soy el n 8
+Hola soy el n 9
+Hola soy el n 10
+
+
+for x in $(ls); do echo "Hola soy el n $x"; done;
+Hola soy el n Apuntes2.txt
+Hola soy el n Apuntes3.txt
+Hola soy el n Apuntes.txt
+
+Bucle infinito:
+while true; do echo "fdfsdfdsf"; done
+
+
+Guía de bash para principiantes
+Capítulo 7. Sentencias condicionales
+
+Pagina web:
+https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
+
+Guía avanzada de secuencias de comandos de Bash
+Una exploración en profundidad del arte de las secuencias de comandos de shell
+
+Pagina web:
+https://tldp.org/LDP/abs/html/
+

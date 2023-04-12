@@ -1,0 +1,37 @@
+Watch:🐥 Gestión de variables en bash
+
+Varibales locales:
+nombre_variable="hola"
+echo $nombre_variable
+Resultado:
+hola
+
+Para hacer variables globales con export:
+
+export Lo_que_sea="sadfsdfsd"
+echo $Lo_que_sea
+Resultado:
+sadfsdfsd
+
+function hola {
+  local -r first_arg=$1
+  echo "Este es el primer argumento"
+  echo $first_arg
+}
+Ejecutamos funcion:
+hola
+Resultado:
+Este es el primer argumento:
+
+Ejecutamos funcion:
+hola asdfdfd 
+Resultado:
+Este es el primer argumento:
+asdfdfd
+
+Todos los argumentos:
+$@
+
+Para aceder con cd:
+cd hola\ carpeta/
+cd "hola carpeta"
